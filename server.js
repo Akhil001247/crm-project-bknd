@@ -8,9 +8,8 @@ const customerRoutes = require('./routes/customerRoutes');
 
 const app = express();
 
-
 app.use(cors({
-  origin: ['http://localhost:5173'], 
+  origin: ['http://localhost:5173', 'https://crm-project-frnd.vercel.app'],
   credentials: true
 }));
 
@@ -20,11 +19,9 @@ app.get("/", (req, res) => {
   res.send("API is running...");
 });
 
-
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
-
 
 app.use('/api/auth', authRoutes);
 app.use('/api/customers', customerRoutes);
