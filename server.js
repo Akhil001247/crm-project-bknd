@@ -10,8 +10,12 @@ const app = express();
 
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://crm-project-frnd-w52h.vercel.app'],
-  credentials: true,
+  origin: [
+    'http://localhost:5173',
+    'https://crm-project-frnd-w52h.vercel.app',
+    'https://crm-project-frnd-ashh.vercel.app'
+  ],
+  credentials: true
 }));
 
 
